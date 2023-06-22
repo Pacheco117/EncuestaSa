@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encuesta de Satisfacción</title>
+  <script>
+    function enviarEncuesta() {
+      // Obtener los valores de los campos
+      var nombre = document.getElementById("nombre").value;
+      var edad = document.getElementById("edad").value;
+      var horaComida = document.getElementById("horaComida").value;
+      var correoElectronico = document.getElementById("correoElectronico").value;
+      var opcionesSeleccionadas = document.querySelectorAll('input[name="opciones"]:checked');
+      var opciones = [];
+      for (var i = 0; i < opcionesSeleccionadas.length; i++) {
+        opciones.push(opcionesSeleccionadas[i].value);
+      }
+      var mes = document.getElementById("mes").value;
+      var colorFavorito = document.getElementById("colorFavorito").value;
+      var url = document.getElementById("url").value;
+      var contrasena = document.getElementById("contrasena").value;
+      var rango = document.getElementById("rango").value;
+
+      // Imprimir los valores en la consola (puedes modificar esta parte para enviar los datos a un servidor)
+      console.log("Nombre: " + nombre);
+      console.log("Edad: " + edad);
+      console.log("Hora de comida: " + horaComida);
+      console.log("Correo electrónico: " + correoElectronico);
+      console.log("Opciones seleccionadas: " + opciones.join(", "));
+      console.log("Mes: " + mes);
+      console.log("Color favorito: " + colorFavorito);
+      console.log("URL: " + url);
+      console.log("Contraseña: " + contrasena);
+      console.log("Rango: " + rango);
+    }
+  </script>
+</head>
+<body>
+  <h1>Encuesta de Satisfacción</h1>
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required><br>
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" required><br>
+
+    <label for="horaComida">Hora de comida:</label>
+    <input type="time" id="horaComida" required><br>
+
+    <label for="correoElectronico">Correo electrónico:</label>
+    <input type="email" id="correoElectronico" required><br>
+
+    <label>Escoja uno opción: </label><br>
+    <input type="checkbox" id="opcion1" name="opciones" value="Perros"> Perros<br>
+    <input type="checkbox" id="opcion2" name="opciones" value="Gatos"> Gatos<br>
+
+    <label for="mes">Mes:</label>
+    <select id="mes" required>
+      <option value="Enero">Enero</option>
+      <option value="Febrero">Febrero</option>
+      <option value="Marzo">Marzo</option>
+      <!-- Agrega las opciones de los demás meses aquí -->
+    </select><br>
+
+    <label for="colorFavorito">Color favorito:</label>
+    <input type="color" id="colorFavorito" required><br>
+
+    <label for="url">URL:</label>
+    <input type="url" id="url" required><br>
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" required><br>
+
+    <label for="rango">Rango (1-100):</label>
+    <input type="range" id="rango" min="1" max="100" required><br>
+
+    <button type="button" onclick="enviarEncuesta()">Enviar</button>
+  </form>
+</body>
+</html>
