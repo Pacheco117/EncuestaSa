@@ -1,6 +1,4 @@
 <?php
-$id = $_GET['id_dato'];
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,16 +11,17 @@ if ($conn->connect_error) {
 }
 
 // Obtener el ID del registro a eliminar desde la URL
-$id = $_GET['id'];
+$id = $_GET['ID_Dato'];
 
 // Eliminar el registro de la base de datos
-$query = "DELETE FROM Datos WHERE id = $id";
+$query = "DELETE FROM Datos WHERE id_Dato = $id";
 mysqli_query($conn, $query);
 
-// Redirigir a la página de lectura
-header("Location: read.php");
+// Redirigir a la página 
+header("Location: admin.php");
 exit();
 
 // Cerrar conexión
 $conn->close();
 ?>
+

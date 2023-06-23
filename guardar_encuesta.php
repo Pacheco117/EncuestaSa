@@ -31,6 +31,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error al guardar los datos en la base de datos: " . $conn->error;
 }
 
+
 // Cerrar la conexión a la base de datos
 $conn->close();
 ?>

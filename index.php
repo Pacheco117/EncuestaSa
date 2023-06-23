@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,12 +47,12 @@
     <input type="color" id="colorFavorito" required><br>
 
     <label for="url">Link de tu perfil de facebook:</label>
-    <input type="url" id="url" required><br>
+     <input type="url" id="url" required><br>
 
     <label for="contrasena">Contraseña:</label>
     <input type="password" id="contrasena" required><br>
 
-    <label for="rango">Rango (1-100):</label>
+    <label for="rango">cuanto te das de calificacion? (1-100):</label>
     <input type="range" id="rango" min="1" max="100" required><br>
 
     <button type="button" onclick="enviarEncuesta()">Enviar</button>
